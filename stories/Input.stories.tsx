@@ -19,3 +19,10 @@ Default.args = {
 	placeholder: 'Enter your email',
 	label: 'Email',
 };
+
+export const Error = Template.bind({});
+Error.args = {
+	label: 'Email',
+	value: 'abcd@1234',
+	errorMessage: 'Invalid email address',
+};
