@@ -2,7 +2,7 @@ import React from 'react';
 
 export interface ButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-	buttonType: ButtonType;
+	buttonType?: ButtonType;
 }
 
 type ButtonType =
