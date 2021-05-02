@@ -2,39 +2,46 @@ import { Meta } from '@storybook/react';
 import React from 'react';
 
 import Button from '../src/Button';
+import ButtonContainer from '../src/ButtonContainer';
 import Modal from '../src/Modal';
-import ThemeDisplay from './ThemeDisplay';
+import { DarkModeToggle } from './ThemeDisplay';
 
 export default {
 	title: 'Components/Modal',
 	component: Modal,
 	argTypes: {
 		isOpen: { control: 'boolean' },
+		darkMode: { control: 'boolean' },
+		size: {
+			control: {
+				type: 'radio',
+				options: ['Small', 'Medium', 'Large', 'Extra large'],
+			},
+		},
 	},
 } as Meta;
 
-export const Default = args => {
-	console.log(args);
-	return ThemeDisplay(
+export const Default = args => (
+	<DarkModeToggle darkMode={args.darkMode}>
 		<Modal isOpen={args.isOpen}>
-			<>
+			<div className="p-4">
 				<h2 className="text-lg font-bold text-gray-700 dark:text-gray-300">
 					Title
 				</h2>
 				<p className="text-black dark:text-gray-100">
 					Here you can put whatever.
 				</p>
-			</>
+			</div>
 		</Modal>
-	);
-};
+	</DarkModeToggle>
+);
 
 Default.args = {
 	isOpen: true,
 };
 
-export const WithButtons = args => {
-	return ThemeDisplay(
+export const WithButtons = args => (
+	<DarkModeToggle darkMode={args.darkMode}>
 		<Modal isOpen={args.isOpen}>
 			<>
 				<div className="p-4">
@@ -45,14 +52,14 @@ export const WithButtons = args => {
 						Do you want to download the selected file?
 					</p>
 				</div>
-				<div className="flex flex-row justify-end space-x-4 p-4 bg-gray-50 dark:bg-gray-950">
+				<ButtonContainer>
 					<Button buttonType="Transparent">Cancel</Button>
 					<Button>Download</Button>
-				</div>
+				</ButtonContainer>
 			</>
 		</Modal>
-	);
-};
+	</DarkModeToggle>
+);
 
 WithButtons.args = {
 	isOpen: true,
