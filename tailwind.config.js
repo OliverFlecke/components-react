@@ -16,6 +16,9 @@ module.exports = {
 			colors: {
 				lime: colors.lime,
 				amber: colors.amber,
+				gray: {
+					950: '#080C14',
+				},
 			},
 		},
 	},

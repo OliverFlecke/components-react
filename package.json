@@ -1,15 +1,16 @@
 {
 	"version": "0.1.1",
 	"license": "MIT",
+	"name": "@oliverflecke/components-react",
+	"author": "Oliver Fleckenstein",
+	"module": "dist/components-react.esm.js",
 	"main": "dist/index.js",
 	"typings": "dist/index.d.ts",
+	"private": false,
 	"files": [
 		"dist",
 		"src"
 	],
-	"name": "@oliverflecke/components-react",
-	"author": "Oliver Fleckenstein",
-	"module": "dist/components-react.esm.js",
 	"engines": {
 		"node": ">=10"
 	},
@@ -25,9 +26,6 @@
 		"analyze": "size-limit --why",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook"
-	},
-	"peerDependencies": {
-		"react": ">=16"
 	},
 	"husky": {
 		"hooks": {
@@ -51,6 +49,9 @@
 			"limit": "10 KB"
 		}
 	],
+	"peerDependencies": {
+		"react": ">=16"
+	},
 	"devDependencies": {
 		"@babel/core": "^7.14.0",
 		"@size-limit/preset-small-lib": "^4.10.2",

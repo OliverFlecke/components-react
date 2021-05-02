@@ -14,7 +14,7 @@ type ButtonType =
 	| 'Link'
 	| 'Transparent';
 
-export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
+const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
 	const { children, buttonType, disabled } = props;
 
 	return (
@@ -26,6 +26,8 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
 		</button>
 	);
 };
+
+export default Button;
 
 Button.defaultProps = {
 	buttonType: 'Primary',
