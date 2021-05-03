@@ -2,7 +2,10 @@ import React, { FC } from 'react';
 import useId from './utils/useId';
 
 export interface InputProps
-	extends React.InputHTMLAttributes<HTMLInputElement> {
+	extends React.DetailedHTMLProps<
+		React.InputHTMLAttributes<HTMLInputElement>,
+		HTMLInputElement
+	> {
 	label?: string;
 	errorMessage?: string;
 }
