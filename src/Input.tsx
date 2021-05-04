@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { forwardRef } from 'react';
 import useId from './utils/useId';
 
 export interface InputProps
@@ -10,7 +10,7 @@ export interface InputProps
 	errorMessage?: string;
 }
 
-const Input: FC<InputProps> = (props: InputProps) => {
+const Input = forwardRef<HTMLInputElement>((props: InputProps, ref) => {
 	const { label, errorMessage } = props;
 	const id = useId('input');
 
@@ -23,10 +23,11 @@ const Input: FC<InputProps> = (props: InputProps) => {
 				{label}
 			</label>
 			<input
+				ref={ref}
 				id={id}
 				type="text"
-				className="py-2 px-4 rounded-md shadow focus:outline-none focus:ring focus:border-indigo-400 bg-white dark:bg-gray-900 dark:text-gray-100"
 				{...props}
+				className={`py-2 px-4 rounded-md shadow focus:outline-none focus:ring focus:border-indigo-400 bg-white dark:bg-gray-900 dark:text-gray-100 ${props.className}`}
 			/>
 			{errorMessage !== undefined && (
 				<div className="text-red-700 dark:text-red-600 text-sm">
@@ -35,6 +36,6 @@ const Input: FC<InputProps> = (props: InputProps) => {
 			)}
 		</div>
 	);
-};
+});
 
 export default Input;
