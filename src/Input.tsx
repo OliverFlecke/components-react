@@ -1,16 +1,19 @@
 import React, { forwardRef } from 'react';
 import useId from './utils/useId';
 
-export interface InputProps
-	extends React.DetailedHTMLProps<
-		React.InputHTMLAttributes<HTMLInputElement>,
-		HTMLInputElement
-	> {
+export interface InputProps {
 	label?: string;
 	errorMessage?: string;
 }
 
-const Input = forwardRef<HTMLInputElement>((props: InputProps, ref) => {
+const Input = forwardRef<
+	HTMLInputElement,
+	InputProps &
+		React.DetailedHTMLProps<
+			React.InputHTMLAttributes<HTMLInputElement>,
+			HTMLInputElement
+		>
+>((props, ref) => {
 	const { label, errorMessage } = props;
 	const id = useId('input');
 
