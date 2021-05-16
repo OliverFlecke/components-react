@@ -3,13 +3,21 @@ import React, { FC } from 'react';
 export interface ModalProps {
 	children: any;
 	isOpen: boolean;
+	onDismiss?: () => void;
 }
 
-const Modal: FC<ModalProps> = ({ isOpen, children }: ModalProps) => {
+const Modal: FC<ModalProps> = ({ isOpen, children, onDismiss }: ModalProps) => {
+	if (!isOpen) return null;
+
 	return (
 		<div className="absolute top-0 left-0 w-screen h-screen">
-			<div className={`h-full max-w-full ${isOpen ? 'center' : 'hidden'}`}>
-				<div className="bg-white dark:bg-black rounded-md m-4">{children}</div>
+			<div className="h-full max-w-full center" onClick={onDismiss}>
+				<div
+					className="bg-white dark:bg-black rounded-md m-4"
+					onClick={e => e.stopPropagation()}
+				>
+					{children}
+				</div>
 			</div>
 		</div>
 	);

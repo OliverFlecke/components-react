@@ -1,3 +1,4 @@
+import { useArgs } from '@storybook/addons';
 import { Meta } from '@storybook/react';
 import React from 'react';
 
@@ -40,26 +41,33 @@ Default.args = {
 	isOpen: true,
 };
 
-export const WithButtons = args => (
-	<DarkModeToggle darkMode={args.darkMode}>
-		<Modal isOpen={args.isOpen}>
-			<>
-				<div className="p-4">
-					<h2 className="text-lg font-bold text-gray-700 dark:text-gray-200">
-						Download file
-					</h2>
-					<p className="text-black dark:text-white">
-						Do you want to download the selected file?
-					</p>
-				</div>
-				<ButtonContainer>
-					<Button buttonType="Transparent">Cancel</Button>
-					<Button>Download</Button>
-				</ButtonContainer>
-			</>
-		</Modal>
-	</DarkModeToggle>
-);
+export const WithButtons = args => {
+	const [{ isOpen }, updateArgs] = useArgs();
+	const close = () => updateArgs({ isOpen: false });
+
+	return (
+		<DarkModeToggle darkMode={args.darkMode}>
+			<Modal isOpen={isOpen} onDismiss={close}>
+				<>
+					<div className="p-4">
+						<h2 className="text-lg font-bold text-gray-700 dark:text-gray-200">
+							Download file
+						</h2>
+						<p className="text-black dark:text-white">
+							Do you want to download the selected file?
+						</p>
+					</div>
+					<ButtonContainer>
+						<Button buttonType="Transparent" onClick={close}>
+							Cancel
+						</Button>
+						<Button>Download</Button>
+					</ButtonContainer>
+				</>
+			</Modal>
+		</DarkModeToggle>
+	);
+};
 
 WithButtons.args = {
 	isOpen: true,
