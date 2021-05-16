@@ -2,12 +2,13 @@ import { Meta } from '@storybook/react';
 import React from 'react';
 import Button from '../src/Button';
 import ButtonContainer from '../src/ButtonContainer';
-import ThemeDisplay from './ThemeDisplay';
+import { DarkModeToggle } from './ThemeDisplay';
 
 export default {
 	title: 'Components/ButtonContainer',
 	component: ButtonContainer,
 	argTypes: {
+		darkMode: { control: 'boolean' },
 		position: {
 			control: {
 				type: 'radio',
@@ -17,13 +18,14 @@ export default {
 	},
 } as Meta;
 
-export const Container = args =>
-	ThemeDisplay(
+export const Container = args => (
+	<DarkModeToggle darkMode={args.darkMode}>
 		<ButtonContainer position={args.position}>
 			<Button buttonType="Transparent">Cancel</Button>
 			<Button>Download</Button>
 		</ButtonContainer>
-	);
+	</DarkModeToggle>
+);
 
 Container.args = {
 	position: 'Right',

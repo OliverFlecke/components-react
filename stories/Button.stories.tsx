@@ -1,18 +1,21 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
-
 import Button, { ButtonProps } from '../src/Button';
-import ThemeDisplay from './ThemeDisplay';
+import { DarkModeToggle } from './ThemeDisplay';
 
 export default {
 	title: 'Components/Button',
 	component: Button,
 	argTypes: {
-		backgroundColor: { control: 'color' },
+		darkMode: { control: 'boolean' },
 	},
 } as Meta;
 
-const Template: Story<ButtonProps> = args => ThemeDisplay(<Button {...args} />);
+const Template: Story<ButtonProps & { darkMode: boolean }> = args => (
+	<DarkModeToggle darkMode={args.darkMode}>
+		<Button {...args} />
+	</DarkModeToggle>
+);
 
 export const Primary = Template.bind({});
 Primary.args = {

@@ -1,18 +1,21 @@
 import { Meta, Story } from '@storybook/react';
 import React from 'react';
-
 import Input, { InputProps } from '../src/Input';
-import ThemeDisplay from './ThemeDisplay';
+import { DarkModeToggle } from './ThemeDisplay';
 
 export default {
 	title: 'Components/Input',
 	component: Input,
 	argTypes: {
-		backgroundColor: { control: 'color' },
+		darkMode: { control: 'boolean' },
 	},
 } as Meta;
 
-const Template: Story<InputProps> = args => ThemeDisplay(<Input {...args} />);
+const Template: Story<InputProps & { darkMode: boolean }> = args => (
+	<DarkModeToggle darkMode={args.darkMode}>
+		<Input {...args} />
+	</DarkModeToggle>
+);
 
 export const Default = Template.bind({});
 Default.args = {
