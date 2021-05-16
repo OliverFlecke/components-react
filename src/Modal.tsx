@@ -11,7 +11,10 @@ const Modal: FC<ModalProps> = ({ isOpen, children, onDismiss }: ModalProps) => {
 
 	return (
 		<div className="absolute top-0 left-0 w-screen h-screen">
-			<div className="h-full max-w-full center" onClick={onDismiss}>
+			<div
+				className="h-full max-w-full center bg-white dark:bg-black bg-opacity-50"
+				onClick={onDismiss}
+			>
 				<div
 					className="bg-white dark:bg-black rounded-md m-4"
 					onClick={e => e.stopPropagation()}
