@@ -12,7 +12,7 @@ const Modal: FC<ModalProps> = ({ isOpen, children, onDismiss }: ModalProps) => {
 	return (
 		<div className="absolute top-0 left-0 w-screen h-screen">
 			<div
-				className="h-full max-w-full center bg-white dark:bg-black bg-opacity-50"
+				className="h-full max-w-full center bg-opacity-50 bg-white dark:bg-opacity-50 dark:bg-black"
 				onClick={onDismiss}
 			>
 				<div
