@@ -48,18 +48,16 @@ export interface DarkModeToggleProps {
 const DarkModeToggle: FC<DarkModeToggleProps> = ({
 	darkMode: isDarkMode,
 	onToggle,
-}: DarkModeToggleProps) => {
-	return (
-		<button
-			onClick={onToggle}
-			className={`h-8 w-8 focus:outline-none ${
-				isDarkMode ? 'text-white' : 'text-black'
-			}`}
-			aria-label="theme toggle"
-		>
-			<Icon isDark={isDarkMode} />
-		</button>
-	);
-};
+}: DarkModeToggleProps) => (
+	<button
+		onClick={onToggle}
+		className={`h-6 w-6 focus:outline-none ${
+			isDarkMode ? 'text-white' : 'text-black'
+		}`}
+		aria-label="theme toggle"
+	>
+		<Icon isDark={isDarkMode} />
+	</button>
+);
 
 export default DarkModeToggle;
