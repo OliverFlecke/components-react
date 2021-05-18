@@ -4,7 +4,7 @@ import Input, { InputProps } from '../src/Input';
 import { DarkModeToggle } from './ThemeDisplay';
 
 export default {
-	title: 'Components/Input',
+	title: 'Components/Input/Basic',
 	component: Input,
 	argTypes: {
 		darkMode: { control: 'boolean' },

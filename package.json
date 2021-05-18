@@ -15,7 +15,7 @@
 		"node": ">=10"
 	},
 	"scripts": {
-		"build:css:dev": "NODE_ENV=development postcss src/styles/main.css -o .storybook/main.css -w",
+		"build:css:dev": "NODE_ENV=development postcss src/styles/main.css -o .storybook/main.css",
 		"build:css": "NODE_ENV=production postcess src/styles/main.css -o .storybook/main.css",
 		"start": "tsdx watch",
 		"build": "tsdx build",
