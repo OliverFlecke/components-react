@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react';
 
 function useDarkMode() {
 	const [isDarkMode, setState] = useState(
-		localStorage.theme === 'dark' ||
+		localStorage?.theme === 'dark' ||
 			(!('theme' in localStorage) &&
 				window.matchMedia('(prefers-color-scheme: dark)').matches)
 			? true
@@ -10,7 +10,9 @@ function useDarkMode() {
 	);
 
 	const setDarkMode = useCallback(isDark => {
-		localStorage.theme = isDark ? 'dark' : 'light';
+		if (typeof window !== 'undefined') {
+			localStorage.theme = isDark ? 'dark' : 'light';
+		}
 		setState(isDark);
 	}, []);
 
