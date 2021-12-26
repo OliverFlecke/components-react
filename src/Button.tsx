@@ -14,18 +14,20 @@ type ButtonType =
 	| 'Link'
 	| 'Transparent';
 
-const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
-	const { children, buttonType, disabled } = props;
-
-	return (
-		<button
-			className={`btn ${disabled ? '' : getColor(buttonType)}`}
-			{...props}
-		>
-			{children}
-		</button>
-	);
-};
+const Button: React.FC<ButtonProps> = ({
+	children,
+	buttonType,
+	disabled,
+	...buttonProps
+}: ButtonProps) => (
+	<button
+		className={`btn ${disabled ? '' : getColor(buttonType)}`}
+		disabled={disabled}
+		{...buttonProps}
+	>
+		{children}
+	</button>
+);
 
 export default Button;
 
