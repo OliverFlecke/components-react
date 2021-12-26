@@ -14,7 +14,7 @@ const Input = forwardRef<
 			HTMLInputElement
 		>
 >((props, ref) => {
-	const { label, errorMessage } = props;
+	const { label, errorMessage, ...inputProps } = props;
 	const id = useId('input');
 
 	return (
@@ -29,7 +29,7 @@ const Input = forwardRef<
 				ref={ref}
 				id={id}
 				type="text"
-				{...props}
+				{...inputProps}
 				className={`py-2 px-4 rounded-md shadow focus:outline-none focus:ring focus:border-indigo-400 bg-white dark:bg-gray-900 dark:text-gray-100 ${props.className}`}
 			/>
 			{errorMessage !== undefined && (

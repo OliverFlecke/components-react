@@ -11,8 +11,11 @@ export default {
 	},
 } as Meta;
 
-const Template: Story<InputProps & { darkMode: boolean }> = args => (
-	<DarkModeToggle darkMode={args.darkMode}>
+const Template: Story<InputProps & { darkMode: boolean }> = ({
+	darkMode,
+	...args
+}) => (
+	<DarkModeToggle darkMode={darkMode}>
 		<Input {...args} />
 	</DarkModeToggle>
 );
