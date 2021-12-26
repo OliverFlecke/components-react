@@ -15,10 +15,12 @@ const View = () => {
 	const [{ darkMode }, updateArgs] = useArgs();
 
 	return (
-		<DarkModeToggle
-			darkMode={darkMode}
-			onToggle={() => updateArgs({ darkMode: !darkMode })}
-		/>
+		<div className={darkMode ? 'text-blue-500' : 'text-red-500'}>
+			<DarkModeToggle
+				darkMode={darkMode}
+				onToggle={() => updateArgs({ darkMode: !darkMode })}
+			/>
+		</div>
 	);
 };
 
