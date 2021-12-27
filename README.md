@@ -4,9 +4,13 @@
 [![npm version](https://badge.fury.io/js/@oliverflecke%2Fcomponents-react.svg)](https://badge.fury.io/js/@oliverflecke%2Fcomponents-react)
 
 This repository contains styled components that can be used in React.
-They have primarly been build for usage in my own projects and to improve my own front-end skills.
+They have primarily been build for usage in my own projects and to improve my own front-end skills.
 
-## Build
+[Catelog and documentation of the components](https://components.oliverflecke.me).
+
+## Development
+
+### Build
 
 To build the component library to `dist`:
 
@@ -23,7 +27,7 @@ The project is automatically build before being published.
 npm publish
 ```
 
-## Test
+### Test
 
 This project uses the build in test library in `tsdx`, which uses `jest` under the hood.
 Test are executed with:
