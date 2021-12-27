@@ -13,20 +13,31 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-
       - name: Use Node ${{ matrix.node }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
-
-      - name: Install deps and build (with cache)
+      - name: Install dependencies
         run: yarn install
-
       - name: Lint
         run: yarn lint
-
       - name: Test
         run: yarn test --ci --coverage --maxWorkers=2
-
       - name: Build
         run: yarn build
+
+  publish:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ['16.x']
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - run: yarn install
+      - run: yarn test
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
