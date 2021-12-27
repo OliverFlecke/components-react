@@ -7,3 +7,4 @@ dist
 *.tgz
 ./storybook/main.css
 build/
+coverage/
