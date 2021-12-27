@@ -1,6 +1,7 @@
 # Component library for React
 
 [![CI](https://github.com/OliverFlecke/components-react/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/OliverFlecke/components-react/actions/workflows/main.yml)
+[![npm version](https://badge.fury.io/js/@oliverflecke%2Fcomponents-react.svg)](https://badge.fury.io/js/@oliverflecke%2Fcomponents-react)
 
 This repository contains styled components that can be used in React.
 They have primarly been build for usage in my own projects and to improve my own front-end skills.
