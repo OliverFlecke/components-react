@@ -1,5 +1,7 @@
 # Component library for React
 
+[![CI](https://github.com/OliverFlecke/components-react/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/OliverFlecke/components-react/actions/workflows/main.yml)
+
 This repository contains styled components that can be used in React.
 They have primarly been build for usage in my own projects and to improve my own front-end skills.
 
@@ -10,6 +12,28 @@ To build the component library to `dist`:
 ```sh
 yarn build
 ```
+
+### Publish
+
+Publish the package with `npm`'s standard command.
+The project is automatically build before being published.
+
+```sh
+npm publish
+```
+
+## Test
+
+This project uses the build in test library in `tsdx`, which uses `jest` under the hood.
+Test are executed with:
+
+```sh
+yarn test
+```
+
+During development, it can be usefull to add the `--watch` flag to continuesly execute tests when changes are detected.
+
+Code coverage can be calculated with `--coverage`.
 
 ### Styles
 

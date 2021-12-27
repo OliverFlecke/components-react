@@ -5,7 +5,7 @@ export interface ButtonProps
 	buttonType?: ButtonType;
 }
 
-type ButtonType =
+export type ButtonType =
 	| 'Primary'
 	| 'Secondary'
 	| 'Success'
