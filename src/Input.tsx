@@ -8,11 +8,7 @@ export interface InputProps {
 
 const Input = forwardRef<
 	HTMLInputElement,
-	InputProps &
-		React.DetailedHTMLProps<
-			React.InputHTMLAttributes<HTMLInputElement>,
-			HTMLInputElement
-		>
+	InputProps & React.InputHTMLAttributes<HTMLInputElement>
 >((props, ref) => {
 	const { label, errorMessage, ...inputProps } = props;
 	const id = useId('input');

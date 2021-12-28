@@ -1,20 +1,15 @@
-import React, { useCallback } from 'react';
-import { useId } from '.';
+import React, { forwardRef, useCallback } from 'react';
 
-export interface SelectProps
-	extends React.SelectHTMLAttributes<HTMLSelectElement> {
+export interface SelectProps {
 	label: string;
 	children: any[];
 	onSelection?: (value: string) => void;
 }
 
-const Select = ({
-	label,
-	children,
-	onSelection,
-	...selectProps
-}: SelectProps) => {
-	const id = useId('select');
+const Select = forwardRef<
+	HTMLSelectElement,
+	SelectProps & React.SelectHTMLAttributes<HTMLSelectElement>
+>(({ label, children, onSelection, ...selectProps }, ref) => {
 	const changed = useCallback(
 		(e: React.ChangeEvent<HTMLSelectElement>) => {
 			onSelection?.(e.currentTarget.value);
@@ -23,40 +18,36 @@ const Select = ({
 	);
 
 	return (
-		<div className="flex flex-col space-y-2">
-			<label htmlFor={id} className="text-black dark:text-gray-100">
-				{label}
-			</label>
+		<label className="flex flex-col space-y-2 text-black dark:text-gray-100">
+			<span>{label}</span>
 			<select
-				id={id}
+				ref={ref}
 				className="rounded px-4 py-2 bg-gray-100 dark:bg-gray-900 dark:text-white"
 				onChange={changed}
 				{...selectProps}
 			>
 				{children}
 			</select>
-		</div>
+		</label>
 	);
-};
+});
 
-interface OptionProps {
+interface SelectOptionProps {
 	value: any;
 	children?: string;
 }
 
-const Option = ({ value, children }: OptionProps) => (
+export const SelectOption = ({ value, children }: SelectOptionProps) => (
 	<option value={value}>{children ?? value}</option>
 );
-Select.Option = Option;
 
-interface GroupProps {
+interface SelectGroupProps {
 	label: string;
 	children: any[];
 }
 
-const Group = ({ children, label }: GroupProps) => (
+export const SelectGroup = ({ children, label }: SelectGroupProps) => (
 	<optgroup label={label}>{children}</optgroup>
 );
-Select.Group = Group;
 
 export default Select;
