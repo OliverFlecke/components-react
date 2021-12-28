@@ -50,4 +50,4 @@ export const SelectGroup = ({ children, label }: SelectGroupProps) => (
 	<optgroup label={label}>{children}</optgroup>
 );
 
-export default Select;
+export default Select as any;
