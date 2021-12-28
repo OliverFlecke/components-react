@@ -21,7 +21,6 @@
 		"start": "tsdx watch",
 		"build": "tsdx build",
 		"test": "tsdx test --passWithNoTests",
-		"test:ci": "tsdx test --passWithNoTests --ci --coverage --coverageReporters=\"text\" --coverageReporters=\"text-summary\"",
 		"lint": "tsdx lint",
 		"prepare": "tsdx build",
 		"size": "size-limit",
