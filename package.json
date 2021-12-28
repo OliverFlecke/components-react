@@ -15,8 +15,9 @@
 		"node": ">=10"
 	},
 	"scripts": {
-		"build:css:dev": "NODE_ENV=development TAILWIND_MODE=watch postcss src/styles/main.css -o .storybook/main.css",
+		"build:css:dev": "NODE_ENV=development TAILWIND_MODE=watch postcss src/styles/main.css -o .storybook/main.css -v --watch",
 		"build:css": "NODE_ENV=production postcess src/styles/main.css -o .storybook/main.css",
+		"dev": "concurrently --kill-others --names \"CSS,SB\" -c \"bgBlue.bold,bgGreen.bold\" \"yarn build:css:dev\" \"yarn storybook\"",
 		"start": "tsdx watch",
 		"build": "tsdx build",
 		"test": "tsdx test --passWithNoTests",
@@ -67,6 +68,7 @@
 		"@types/react-test-renderer": "^17.0.1",
 		"autoprefixer": "^10.2.5",
 		"babel-loader": "^8.2.2",
+		"concurrently": "^6.5.1",
 		"gh-pages": "^3.1.0",
 		"husky": "^6.0.0",
 		"postcss": "^8.2.13",
