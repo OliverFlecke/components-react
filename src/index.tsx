@@ -3,6 +3,7 @@ import ButtonContainer from './ButtonContainer';
 import DarkModeToggle from './DarkModeToggle';
 import Input from './Input';
 import Modal from './Modal';
+import Select from './Select';
 import Toggle from './Toggle';
 import useDarkMode from './utils/useDarkMode';
 import useDarkModeWithClass from './utils/useDarkModeWithClass';
@@ -13,6 +14,7 @@ export {
 	Button,
 	ButtonContainer,
 	Input,
+	Select,
 	Modal,
 	DarkModeToggle,
 	Toggle,
