@@ -2,7 +2,7 @@
 
 exports[`Toggle Render snapshot 1`] = `
 <label
-  className="switch relative inline-block w-16 h-9"
+  className="switch"
 >
   <input
     type="checkbox"
