@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toggle Render snapshot 1`] = `
+<label
+  className="switch"
+>
+  <input
+    type="checkbox"
+  />
+  <span
+    className="slider"
+  />
+</label>
+`;
