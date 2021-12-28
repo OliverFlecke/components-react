@@ -18,7 +18,7 @@ const Select = forwardRef<
 	);
 
 	return (
-		<label className="flex flex-col space-y-2 text-black dark:text-gray-100">
+		<label className="flex flex-col space-y-2">
 			<span className="input-label">{label}</span>
 			<select
 				ref={ref}
