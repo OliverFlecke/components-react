@@ -21,4 +21,5 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           threshold: 80
           package-manager: yarn
+          annotations: none
           test-script: npx tsdx test --passWithNoTests --ci --coverage --coverageReporters="text" --coverageReporters="text-summary"
