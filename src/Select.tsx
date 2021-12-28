@@ -19,10 +19,10 @@ const Select = forwardRef<
 
 	return (
 		<label className="flex flex-col space-y-2 text-black dark:text-gray-100">
-			<span>{label}</span>
+			<span className="input-label">{label}</span>
 			<select
 				ref={ref}
-				className="rounded px-4 py-2 bg-gray-100 dark:bg-gray-900 dark:text-white"
+				className="rounded-md px-4 py-2 bg-gray-100 dark:bg-gray-900 dark:text-white shadow focus:outline-none focus:ring focus:border-indigo-400"
 				onChange={changed}
 				{...selectProps}
 			>

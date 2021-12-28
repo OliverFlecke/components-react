@@ -13,8 +13,8 @@ const Input = forwardRef<
 
 	return (
 		<div className="space-y-2">
-			<label className="block text-gray-700 dark:text-gray-300 font-medium text-sm">
-				<span>{label}</span>
+			<label className="space-y-2">
+				<span className="input-label">{label}</span>
 				<input
 					ref={ref}
 					type="text"
