@@ -9,6 +9,7 @@ import useDarkMode from './utils/useDarkMode';
 import useDarkModeWithClass from './utils/useDarkModeWithClass';
 import useId from './utils/useId';
 
+export * from './Select';
 export {
 	Button,
 	ButtonContainer,
