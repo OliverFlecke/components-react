@@ -51,11 +51,6 @@
 			"limit": "10 KB"
 		}
 	],
-	"jest": {
-		"setupFilesAfterEnv": [
-			"./node_modules/jest-enzyme/lib/index.js"
-		]
-	},
 	"peerDependencies": {
 		"react": ">=16"
 	},

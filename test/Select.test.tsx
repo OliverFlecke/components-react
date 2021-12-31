@@ -20,4 +20,17 @@ describe('Select', () => {
 			.toJSON();
 		expect(tree).toMatchSnapshot();
 	});
+
+	test('Option is clicked', () => {
+		const select = shallow(
+			<Select>
+				<SelectGroup label="values">
+					<SelectOption value="1">1</SelectOption>
+					<SelectOption value="2">2</SelectOption>
+				</SelectGroup>
+			</Select>
+		);
+
+		expect(select.html()).toMatchSnapshot();
+	});
 });
