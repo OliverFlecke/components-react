@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-type Position = 'Left' | 'Right' | 'Center';
+export type Position = 'Left' | 'Right' | 'Center';
 
 export interface ButtonContainerProps {
 	position?: Position;
@@ -16,7 +16,7 @@ const ButtonContainer: FC<ButtonContainerProps> = ({
 	<div
 		className={`w-full flex flex-row rounded-md space-x-4 p-4 bg-gray-50 dark:bg-gray-900 ${getPositionClass(
 			position
-		)} ${className}`}
+		)}${className === undefined ? '' : ` ${className}`}`}
 	>
 		{children}
 	</div>
