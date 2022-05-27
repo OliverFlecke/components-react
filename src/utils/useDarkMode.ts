@@ -1,9 +1,9 @@
 import { useCallback, useState } from 'react';
 
 function useDarkMode() {
-	const [isDarkMode, setState] = useState(initialState());
+	const [isDarkMode, setState] = useState<boolean>(initialState());
 
-	const setDarkMode = useCallback(isDark => {
+	const setDarkMode = useCallback((isDark: boolean) => {
 		if (typeof window !== 'undefined') {
 			localStorage.theme = isDark ? 'dark' : 'light';
 		}
