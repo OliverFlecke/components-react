@@ -1,6 +1,7 @@
 import Button from './Button';
 import ButtonContainer from './ButtonContainer';
 import DarkModeToggle from './DarkModeToggle';
+import useOnOutsideMouseDown from './hooks/useOnOutsideMouseDown';
 import Input from './Input';
 import Modal from './Modal';
 import Select from './Select';
@@ -20,5 +21,7 @@ export {
 	Toggle,
 	useDarkMode,
 	useDarkModeWithClass,
+	useOnOutsideMouseDown,
 	useId,
 };
+
