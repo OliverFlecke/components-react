@@ -12,7 +12,7 @@
 		"src"
 	],
 	"engines": {
-		"node": ">16"
+		"node": ">=16"
 	},
 	"scripts": {
 		"build:css:dev": "NODE_ENV=development TAILWIND_MODE=watch postcss src/styles/main.css -o .storybook/main.css -v --watch",
