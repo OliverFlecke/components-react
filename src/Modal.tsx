@@ -17,7 +17,7 @@ export default Modal;
 
 const Container: FC<ModalProps> = ({ children, onDismiss }) => {
 	const { node } = useNodeInRoot('modal-root', {
-		className: 'absolute top-0 left-0 w-screen h-screen',
+		className: 'fixed top-0 left-0 w-screen h-screen',
 	});
 
 	const render = (
